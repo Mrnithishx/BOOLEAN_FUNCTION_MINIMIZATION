@@ -33,26 +33,40 @@ Hardware – PCs, Cyclone II , USB flasher
 
 **Program:**
 
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
-```
-Developed by:Nithish D M 
-RegisterNumber: 212223230144*/
-
-// Verilog model:Circuit with boolean expressions
-module ex02 (E,F,A,B,C,D);
-input A, B, C, D;
-output E,F;
-assign E = A || (B && C) || ((!B) && D);
-assign F=((!B) && C) || ( B && (!C) && (!D));
+~~~
+module booleanfn(a,b,c,d,f1);
+input a,b,c,d;
+output f1;
+assign f1=((~b & ~d)|(~a & b & d)|(a & b & ~c));
 endmodule
-```
+~~~
+
+~~~
+module booleanfnb(w,x,y,z,f2);
+input w,x,y,z;
+output f2;
+assign f2=((~y & z)|(w & y)|(x & y));
+endmodule
+~~~
+
+Developed by: NITHISH D M 
+RegisterNumber: 212224235001
 
 
 **RTL realization**
-![image](https://github.com/user-attachments/assets/7ce3bebe-a18d-4381-854c-e892e8c2fd58)
+f1
+![Screenshot (196)](https://github.com/user-attachments/assets/81755bfe-362f-4aba-8b2a-f84f37d1d6a2)
 
-**Timing Diagram**
-![image](https://github.com/user-attachments/assets/f91a350d-34ba-407c-b38f-49d3d55ac3b5)
+f2
+![Screenshot (198)](https://github.com/user-attachments/assets/ec0315e2-efdf-457a-a35c-0b4260cb614a)
+
+
+**Output:**
+![Screenshot (197)](https://github.com/user-attachments/assets/8778d584-0dba-4ca7-9b2c-aea173f39f3f)
+
+![Screenshot (199)](https://github.com/user-attachments/assets/cdf57f18-2d2b-41aa-b8e5-ce9bc7dfbff4)
+
+
 
 
 **Result:**
